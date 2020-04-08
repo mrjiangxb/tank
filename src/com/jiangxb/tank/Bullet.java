@@ -29,6 +29,8 @@ public class Bullet {
         rectangle.y = this.y;
         rectangle.width = WIDTH;
         rectangle.height = HEIGHT;
+
+        tankFrame.bullets.add(this);
     }
 
     public int getX() {
@@ -131,9 +133,6 @@ public class Bullet {
         if (this.group == tank.getGroup()) return;
 
         // TODO: 用一个rectangle来记录子弹的位置
-        // Rectangle rectangle1 = new Rectangle(this.x, this.y, WIDTH, HEIGHT);
-        // Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), tank.WIDTH, tank.HEIGHT);
-
         if (rectangle.intersects(tank.rectangle)) {
             tank.die();
             this.die();

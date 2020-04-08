@@ -16,7 +16,7 @@ public class Tank {
     private Dir dir = Dir.DOWN;
     // 是否移动
     private boolean moving = true;
-    private TankFrame tankFrame = null;
+    TankFrame tankFrame = null;
     // 是否存活
     private boolean living = true;
     // 所属阵营
@@ -25,6 +25,8 @@ public class Tank {
     Rectangle rectangle = new Rectangle();
 
     private Random random = new Random();
+
+    FireStrategy fireStrategy;
 
     public Tank(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
         this.x = x;
@@ -37,6 +39,23 @@ public class Tank {
         rectangle.y = this.y;
         rectangle.width = WIDTH;
         rectangle.height = HEIGHT;
+
+        if (group == Group.GOOD) {
+            // 从配置文件读取开火策略
+            String goodFSName = (String) PropertyMgr.get("goodFS");
+            try {
+                fireStrategy = (FireStrategy)Class.forName(goodFSName).newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }else {
+            fireStrategy = new DefaultFireStrategy();
+        }
+
     }
 
     public Dir getDir() {
@@ -129,6 +148,9 @@ public class Tank {
         if (this.group == Group.BAD && random.nextInt(100) > 95) {
             randomDir();
         }
+        /*if (this.group == Group.GOOD){
+            new Thread( () -> new Audio("audio/tank_move.wav").play() ).start();
+        }*/
 
         boundsCheck();
 
@@ -150,9 +172,7 @@ public class Tank {
     }
 
     public void fire() {
-        int bX = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
-        int bY = this.y + Tank.HEIGHT/2 - Bullet.HEIGHT/2;
-        tankFrame.bullets.add(new Bullet(bX, bY, this.dir, this.group, this.tankFrame));
+        fireStrategy.fire(this);
     }
 
     public void die(){
