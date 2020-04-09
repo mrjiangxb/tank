@@ -1,11 +1,10 @@
-package com.jiangxb.tank;
+package com.jiangxb.tank.abstractfactory;
 
-import com.jiangxb.tank.abstractfactory.BaseBullet;
-import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
+import com.jiangxb.tank.*;
 
 import java.awt.*;
 
-public class Bullet extends BaseBullet {
+public class RectBullet extends BaseBullet {
 
     private static final int SPEED = 10;
     public static final int WIDTH = ResourceMgr.bulletD.getWidth();
@@ -19,7 +18,7 @@ public class Bullet extends BaseBullet {
 
     Rectangle rectangle = new Rectangle();
 
-    public Bullet(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
+    public RectBullet(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
         this.x = x;
         this.y = y;
         this.dir = dir;
@@ -81,22 +80,11 @@ public class Bullet extends BaseBullet {
             tankFrame.bullets.remove(this);
         }
 
-        switch (dir) {
-            case LEFT:
-                g.drawImage(ResourceMgr.bulletL, x, y, null);
-                break;
-            case UP:
-                g.drawImage(ResourceMgr.bulletU, x, y, null);
-                break;
-            case RIGHT:
-                g.drawImage(ResourceMgr.bulletR, x, y, null);
-                break;
-            case DOWN:
-                g.drawImage(ResourceMgr.bulletD, x, y, null);
-                break;
-            default:
-                break;
-        }
+        Color color = g.getColor();
+        g.setColor(Color.YELLOW);
+        g.fillRect(x, y, 10, 10);
+        g.setColor(color);
+
         move();
     }
 
@@ -130,6 +118,7 @@ public class Bullet extends BaseBullet {
         this.living = false;
     }
 
+    @Override
     public void collideWith(Tank tank) {
 
         if (this.group == tank.getGroup()) return;

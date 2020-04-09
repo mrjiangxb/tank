@@ -1,9 +1,11 @@
 package com.jiangxb.tank;
 
+import com.jiangxb.tank.abstractfactory.BaseTank;
+
 import java.awt.*;
 import java.util.Random;
 
-public class Tank {
+public class Tank extends BaseTank {
 
     private static final int SPEED = 5;
 
@@ -22,7 +24,7 @@ public class Tank {
     // 所属阵营
     private Group group = Group.BAD;
 
-    Rectangle rectangle = new Rectangle();
+    public Rectangle rectangle = new Rectangle();
 
     private Random random = new Random();
 

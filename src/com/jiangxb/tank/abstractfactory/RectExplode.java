@@ -1,11 +1,12 @@
-package com.jiangxb.tank;
+package com.jiangxb.tank.abstractfactory;
 
-import com.jiangxb.tank.abstractfactory.BaseExplode;
+import com.jiangxb.tank.Audio;
+import com.jiangxb.tank.ResourceMgr;
+import com.jiangxb.tank.TankFrame;
 
 import java.awt.*;
 
-public class Explode extends BaseExplode {
-
+public class RectExplode extends BaseExplode {
     public static final int WIDTH = ResourceMgr.explodes[0].getWidth();
     public static final int HEIGNT = ResourceMgr.explodes[0].getHeight();
 
@@ -15,12 +16,12 @@ public class Explode extends BaseExplode {
 
     private int step = 0;
 
-    public Explode(int x, int y, TankFrame tankFrame) {
+    public RectExplode(int x, int y, TankFrame tankFrame) {
         this.x = x;
         this.y = y;
         this.tankFrame = tankFrame;
 
-        new Audio("audio/explode.wav").play();
+        new Thread( ()->new Audio("audio/explode.wav").play()).start();
     }
 
     public int getX() {
@@ -42,10 +43,19 @@ public class Explode extends BaseExplode {
 
     @Override
     public void paint(Graphics g){
-        g.drawImage(ResourceMgr.explodes[step++], x, y, null);
+        /*g.drawImage(ResourceMgr.explodes[step++], x, y, null);
         if (step >= ResourceMgr.explodes.length) {
             tankFrame.explodes.remove(this);
-        }
-    }
+        }*/
 
+        Color color = g.getColor();
+        g.setColor(Color.RED);
+        g.fillRect(x, y, 10*step, 10*step);
+        step++;
+        if (step >= 10) {
+            tankFrame.explodes.remove(this);
+        }
+        g.setColor(color);
+
+    }
 }

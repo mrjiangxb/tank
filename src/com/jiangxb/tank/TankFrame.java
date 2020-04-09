@@ -1,5 +1,7 @@
 package com.jiangxb.tank;
 
+import com.jiangxb.tank.abstractfactory.*;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -13,9 +15,11 @@ public class TankFrame extends Frame {
     public static final int GAME_WIDTH = 900, GAME_HEIGHT = 600;
 
     Tank myTank = new Tank(200,500, Dir.UP, Group.GOOD, this);
-    List<Bullet> bullets = new ArrayList<>();
-    List<Tank> tanks = new ArrayList<>();
-    List<Explode> explodes = new ArrayList<>();
+    public List<BaseBullet> bullets = new ArrayList<>();
+    public List<Tank> tanks = new ArrayList<>();
+    public List<BaseExplode> explodes = new ArrayList<>();
+
+    public GameFactory gameFactory = new RectFactory();
 
     // 主窗口设置
     public TankFrame (){
