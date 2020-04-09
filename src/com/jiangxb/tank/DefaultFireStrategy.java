@@ -1,5 +1,7 @@
 package com.jiangxb.tank;
 
+import com.jiangxb.tank.abstractfactory.BaseTank;
+
 public class DefaultFireStrategy implements FireStrategy {
     @Override
     public void fire(Tank tank) {

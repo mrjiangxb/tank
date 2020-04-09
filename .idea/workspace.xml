@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6f207d6-0631-49bf-a115-59263e80bac8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseExplode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseTank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/DefaultFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/GameFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectExplode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectTank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Bullet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Bullet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Bullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Explode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Explode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/FourDirFireStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/FourDirFireStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Tank$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Tank$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Tank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/Tank.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/TankFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/TankFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/TankFrame$MyKeyListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/TankFrame$MyKeyListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/TankFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tank/com/jiangxb/tank/TankFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/Explode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/Explode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/FireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/FireStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/FourDirFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/FourDirFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/Tank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/Tank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/TankFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/TankFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseTank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseTank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/TankFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="21" column="52" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="52" />
+            <state relative-caret-position="164">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#MyKeyListener#0;class#TankFrame#0" />
@@ -56,10 +43,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectExplode.java">
+        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="926">
-              <caret line="55" column="44" lean-forward="true" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="44" />
+            <state relative-caret-position="146">
+              <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,26 +57,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/FourDirFireStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+            <state relative-caret-position="330">
+              <caret line="15" column="9" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="15" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java">
+        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="80" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="80" />
+            <state relative-caret-position="88">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="128" column="23" lean-forward="true" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseTank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#190#191#0" expanded="true" />
+                <element signature="e#216#217#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="127" column="10" lean-forward="true" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
+            <state relative-caret-position="259">
+              <caret line="176" column="23" selection-start-line="176" selection-start-column="23" selection-end-line="176" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#paint#0;class#Tank#0" />
@@ -102,44 +118,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectTank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="689">
+              <caret line="168" column="44" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/FireStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectFactory.java">
+        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="54" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="54" />
-              <folding>
-                <element signature="e#467#468#0" expanded="true" />
-                <element signature="e#494#495#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="8" column="52" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="278">
+              <caret line="13" column="9" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="13" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -192,30 +192,31 @@
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/ImageUtil.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/ResourceMgr.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/PropertyMgr.java" />
-        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java" />
         <option value="$PROJECT_DIR$/src/config" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseExplode.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/Explode.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectExplode.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/GameFactory.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/DefaultFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/Bullet.java" />
-        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/Tank.java" />
-        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/TankFrame.java" />
-        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/FourDirFireStrategy.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/Bullet.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java" />
-        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectTank.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/Tank.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseTank.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java" />
         <option value="$PROJECT_DIR$/src/com/jiangxb/tank/FireStrategy.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectTank.java" />
+        <option value="$PROJECT_DIR$/src/com/jiangxb/tank/TankFrame.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="210" />
-    <option name="y" value="44" />
-    <option name="width" value="1105" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="69" />
+    <option name="y" value="23" />
+    <option name="width" value="1211" />
     <option name="height" value="676" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -392,7 +393,7 @@
       <workItem from="1586308443461" duration="8385000" />
       <workItem from="1586340477603" duration="6542000" />
       <workItem from="1586353268555" duration="1186000" />
-      <workItem from="1586400575474" duration="8489000" />
+      <workItem from="1586400575474" duration="13349000" />
     </task>
     <task id="LOCAL-00001" summary="开火运用策略模式">
       <created>1586354374587</created>
@@ -401,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586354374587</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="开火策略模式+子弹爆炸抽象工厂">
+      <created>1586420185448</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586420185448</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -410,7 +418,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59666000" />
+    <option name="totallyTimeSpent" value="64526000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,16 +430,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="69" y="23" width="1211" height="676" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25189108" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31798437" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1462585" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14615385" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22115384" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -439,8 +447,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32884616" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.37307692" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32993197" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -455,9 +463,36 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="开火运用策略模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="开火运用策略模式" />
+    <MESSAGE value="开火策略模式+子弹爆炸抽象工厂" />
+    <option name="LAST_COMMIT_MESSAGE" value="开火策略模式+子弹爆炸抽象工厂" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/jiangxb/Main.java" />
@@ -537,13 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Group.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -603,30 +631,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-242">
-          <caret line="78" lean-forward="true" selection-start-line="77" selection-start-column="13" selection-end-line="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Explode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -643,48 +651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="8" column="52" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="80" column="9" lean-forward="true" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/TankFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#MyKeyListener#0;class#TankFrame#0" />
-            <element signature="method#keyPressed#0;class#MyKeyListener#0;class#TankFrame#0" />
-            <element signature="method#keyReleased#0;class#MyKeyListener#0;class#TankFrame#0" />
-            <element signature="method#setMainTankDir#0;class#MyKeyListener#0;class#TankFrame#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="80" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="54" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="54" />
+        <state relative-caret-position="44">
+          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding>
             <element signature="e#467#468#0" expanded="true" />
             <element signature="e#494#495#0" expanded="true" />
@@ -692,37 +662,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseBullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/BaseTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#190#191#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectBullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="128" column="23" lean-forward="true" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/FourDirFireStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/FireStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectTank.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
+        <state relative-caret-position="330">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="127" column="10" lean-forward="true" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
+        <state relative-caret-position="259">
+          <caret line="176" column="23" selection-start-line="176" selection-start-column="23" selection-end-line="176" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#paint#0;class#Tank#0" />
             <element signature="method#boundsCheck#0;class#Tank#0" />
             <element signature="e#4381#4382#0" expanded="true" />
             <element signature="e#4420#4421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/FireStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/DefaultFireStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/abstractfactory/RectTank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="168" column="44" selection-start-line="168" selection-start-column="44" selection-end-line="168" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/jiangxb/tank/TankFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#MyKeyListener#0;class#TankFrame#0" />
+            <element signature="method#keyPressed#0;class#MyKeyListener#0;class#TankFrame#0" />
+            <element signature="method#keyReleased#0;class#MyKeyListener#0;class#TankFrame#0" />
+            <element signature="method#setMainTankDir#0;class#MyKeyListener#0;class#TankFrame#0" />
           </folding>
         </state>
       </provider>

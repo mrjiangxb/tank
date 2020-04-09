@@ -5,7 +5,7 @@ import com.jiangxb.tank.*;
 public class RectFactory extends GameFactory {
     @Override
     public BaseTank createTank(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
-        return new Tank(x, y, dir, group, tankFrame);
+        return new RectTank(x, y, dir, group, tankFrame);
     }
 
     @Override

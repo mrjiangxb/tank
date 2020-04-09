@@ -1,6 +1,7 @@
 package com.jiangxb.tank;
 
 import com.jiangxb.tank.abstractfactory.BaseBullet;
+import com.jiangxb.tank.abstractfactory.BaseTank;
 import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 
 import java.awt.*;
@@ -130,7 +131,8 @@ public class Bullet extends BaseBullet {
         this.living = false;
     }
 
-    public void collideWith(Tank tank) {
+    @Override
+    public void collideWith(BaseTank tank) {
 
         if (this.group == tank.getGroup()) return;
 

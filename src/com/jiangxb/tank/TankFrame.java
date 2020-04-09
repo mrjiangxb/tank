@@ -14,12 +14,15 @@ public class TankFrame extends Frame {
 
     public static final int GAME_WIDTH = 900, GAME_HEIGHT = 600;
 
+    // 只需更改工厂就可以切换坦克 子弹样式
+    public GameFactory gameFactory = new DefaultFactory();
+
     Tank myTank = new Tank(200,500, Dir.UP, Group.GOOD, this);
     public List<BaseBullet> bullets = new ArrayList<>();
-    public List<Tank> tanks = new ArrayList<>();
+    public List<BaseTank> tanks = new ArrayList<>();
     public List<BaseExplode> explodes = new ArrayList<>();
 
-    public GameFactory gameFactory = new RectFactory();
+
 
     // 主窗口设置
     public TankFrame (){
