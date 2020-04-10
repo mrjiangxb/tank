@@ -13,24 +13,25 @@ public class Bullet {
     private int x, y;
     private Dir dir;
     private boolean living = true;
-    private TankFrame tankFrame = null;
+    // private TankFrame tankFrame = null;
     private Group group = Group.BAD;
 
+    GameModel gameModel;
     Rectangle rectangle = new Rectangle();
 
-    public Bullet(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
+    public Bullet(int x, int y, Dir dir, Group group, GameModel gameModel) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.tankFrame = tankFrame;
+        this.gameModel = gameModel;
 
         rectangle.x = this.x;
         rectangle.y = this.y;
         rectangle.width = WIDTH;
         rectangle.height = HEIGHT;
 
-        tankFrame.bullets.add(this);
+        gameModel.bullets.add(this);
     }
 
     public int getX() {
@@ -76,7 +77,7 @@ public class Bullet {
     public void paint(Graphics g){
 
         if (!living){
-            tankFrame.bullets.remove(this);
+            gameModel.bullets.remove(this);
         }
 
         switch (dir) {
@@ -133,13 +134,16 @@ public class Bullet {
         if (this.group == tank.getGroup()) return;
 
         // TODO: 用一个rectangle来记录子弹的位置
+        // Rectangle rectangle1 = new Rectangle(this.x, this.y, WIDTH, HEIGHT);
+        // Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), tank.WIDTH, tank.HEIGHT);
+
         if (rectangle.intersects(tank.rectangle)) {
             tank.die();
             this.die();
 
             int eX = tank.getX() + Tank.WIDTH/2 - Explode.WIDTH/2;
             int eY = tank.getY() + Tank.HEIGHT/2 - Explode.HEIGNT/2;
-            tankFrame.explodes.add(new Explode(eX, eY, tankFrame));
+            gameModel.explodes.add(new Explode(eX, eY, gameModel));
         }
     }
 }
