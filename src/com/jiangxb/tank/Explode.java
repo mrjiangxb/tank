@@ -11,14 +11,13 @@ public class Explode extends GameObject {
     // private boolean living = true;
     // private TankFrame tankFrame = null;
 
-    GameModel gameModel;
     private int step = 0;
 
-    public Explode(int x, int y, GameModel gameModel) {
+    public Explode(int x, int y) {
         this.x = x;
         this.y = y;
-        this.gameModel = gameModel;
 
+        GameModel.getInstance().add(this);
         new Audio("audio/explode.wav").play();
     }
 
@@ -42,7 +41,7 @@ public class Explode extends GameObject {
     public void paint(Graphics g){
         g.drawImage(ResourceMgr.explodes[step++], x, y, null);
         if (step >= ResourceMgr.explodes.length) {
-            gameModel.remove(this);
+            GameModel.getInstance().remove(this);
         }
     }
 

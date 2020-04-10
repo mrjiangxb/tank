@@ -5,13 +5,15 @@ import java.util.Random;
 
 public class Tank extends GameObject {
 
-    private static final int SPEED = 5;
+    private static final int SPEED = 4;
 
     public static final int WIDTH = ResourceMgr.goodTankU.getWidth();
     public static final int HEIGHT = ResourceMgr.goodTankU.getHeight();
 
     // 坐标
     private int x, y;
+    // 记录move()前的位置
+    int oldX, oldY;
     // 方向
     private Dir dir = Dir.DOWN;
     // 是否移动
@@ -28,14 +30,11 @@ public class Tank extends GameObject {
 
     FireStrategy fireStrategy;
 
-    GameModel gameModel;
-
-    public Tank(int x, int y, Dir dir, Group group, GameModel gameModel) {
+    public Tank(int x, int y, Dir dir, Group group) {
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.gameModel = gameModel;
 
         rectangle.x = this.x;
         rectangle.y = this.y;
@@ -57,6 +56,9 @@ public class Tank extends GameObject {
         }else {
             fireStrategy = new DefaultFireStrategy();
         }
+
+        // 加入到 GameModel 的objects中
+        GameModel.getInstance().add(this);
 
     }
 
@@ -104,13 +106,9 @@ public class Tank extends GameObject {
         return rectangle;
     }
 
-    public GameModel getGameModel() {
-        return gameModel;
-    }
-
     public void paint(Graphics g){
 
-        if (!living) gameModel.remove(this);
+        if (!living) GameModel.getInstance().remove(this);
 
         switch (dir) {
             case LEFT:
@@ -133,6 +131,9 @@ public class Tank extends GameObject {
 
     // 移动
     private void move() {
+        // 记录移动前的坐标
+        oldX = x;
+        oldY = y;
 
         if (!moving) return;
 
@@ -184,24 +185,10 @@ public class Tank extends GameObject {
         this.dir = Dir.values()[random.nextInt(4)];
     }
 
-    // 转方向
-    public void turnDir(){
-        switch (dir) {
-            case LEFT:
-                this.dir = Dir.DOWN;
-                break;
-            case UP:
-                this.dir = Dir.LEFT;
-                break;
-            case RIGHT:
-                this.dir = Dir.UP;
-                break;
-            case DOWN:
-                this.dir = Dir.RIGHT;
-                break;
-            default:
-                break;
-        }
+    // 回退
+    public void back(){
+        this.x = oldX;
+        this.y = oldY;
     }
 
     // 开火

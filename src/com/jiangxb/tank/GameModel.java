@@ -1,9 +1,5 @@
 package com.jiangxb.tank;
 
-import com.jiangxb.tank.cor.BulletTankCollider;
-import com.jiangxb.tank.cor.Collider;
-import com.jiangxb.tank.cor.TankTankCollider;
-
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +12,11 @@ public class GameModel {
 
     private static final GameModel INSTANCE = new GameModel();
 
-    Tank myTank = new Tank(200,500, Dir.UP, Group.GOOD, this);
+    static {
+        INSTANCE.init();
+    }
 
-//    Collider collider = new BulletTankCollider();
-//    Collider collider2 = new TankTankCollider();
+    private Tank myTank;
 
     ColliderChain colliderChain = new ColliderChain();
 
@@ -29,31 +26,37 @@ public class GameModel {
         return INSTANCE;
     }
 
+    private GameModel() {}
 
-    private GameModel() {
+    private void init(){
+
+        myTank = new Tank(200,500, Dir.UP, Group.GOOD);
+
         int initTankCount = Integer.parseInt((String) PropertyMgr.get("initTankCount")) ;
 
         // 初始化敌方坦克
         for (int i = 0; i < initTankCount; i++) {
-            this.add(new Tank(50+i*80, 200, Dir.DOWN, Group.BAD, this));
+            new Tank(50+i*80, 200, Dir.DOWN, Group.BAD);
+
         }
+
+        // 初始化墙
+        this.add(new Wall(150, 150, 200, 50));
+        this.add(new Wall(550, 150, 200, 50));
+        this.add(new Wall(300, 300, 50, 200));
+        this.add(new Wall(550, 300, 50, 200));
+
     }
 
     public void add(GameObject gameObject){
         this.objects.add(gameObject);
     }
+
     public void remove(GameObject gameObject){
         this.objects.remove(gameObject);
     }
 
     public void paint(Graphics g) {
-
-//        Color color = g.getColor();
-//        g.setColor(Color.WHITE);
-//        g.drawString("子弹数"+bullets.size(), 10, 60);
-//        g.drawString("敌人数"+tanks.size(), 10, 80);
-//        g.drawString("爆炸数"+explodes.size(), 10, 100);
-//        g.setColor(color);
 
         myTank.paint(g);
         // 若用迭代器 删除时会报错
@@ -66,18 +69,10 @@ public class GameModel {
             for (int j=i+1; j < objects.size(); j++) {
                 GameObject o1 = objects.get(i);
                 GameObject o2 = objects.get(j);
-//                collider.collide(o1, o2);
-//                collider2.collide(o1, o2);
+                // 执行碰撞检测链
                 colliderChain.collide(o1, o2);
             }
         }
-
-        // 碰撞检测
-//        for (int i = 0; i < bullets.size(); i++) {
-//            for (int j = 0; j < tanks.size(); j++) {
-//                bullets.get(i).collideWith(tanks.get(j));
-//            }
-//        }
 
     }
 

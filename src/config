@@ -11,4 +11,4 @@ goodFS=com.jiangxb.tank.FourDirFireStrategy
 badFS=com.jiangxb.tank.DefaultFireStrategy
 
 #colliders
-colliders=com.jiangxb.tank.cor.BulletTankCollider,com.jiangxb.tank.cor.TankTankCollider
+colliders=com.jiangxb.tank.collider.BulletTankCollider,com.jiangxb.tank.collider.TankTankCollider,com.jiangxb.tank.collider.TankWallCollider,com.jiangxb.tank.collider.BulletWallCollider

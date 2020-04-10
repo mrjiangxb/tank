@@ -1,4 +1,4 @@
-package com.jiangxb.tank.cor;
+package com.jiangxb.tank.collider;
 
 import com.jiangxb.tank.*;
 
@@ -10,8 +10,8 @@ public class TankTankCollider implements Collider {
             Tank tank2 = (Tank) o2;
 
             if (tank1.getRectangle().intersects(tank2.getRectangle())) {
-                tank1.turnDir();
-                tank2.turnDir();
+                tank1.back();
+                tank2.back();
             }
         }
         return true;

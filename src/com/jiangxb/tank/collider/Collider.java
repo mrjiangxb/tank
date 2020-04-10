@@ -1,4 +1,4 @@
-package com.jiangxb.tank.cor;
+package com.jiangxb.tank.collider;
 
 import com.jiangxb.tank.GameObject;
 

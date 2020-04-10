@@ -1,4 +1,4 @@
-package com.jiangxb.tank.cor;
+package com.jiangxb.tank.collider;
 
 import com.jiangxb.tank.*;
 
@@ -17,8 +17,7 @@ public class BulletTankCollider implements Collider {
 
                 int eX = tank.getX() + Tank.WIDTH/2 - Explode.WIDTH/2;
                 int eY = tank.getY() + Tank.HEIGHT/2 - Explode.HEIGNT/2;
-                GameModel gameModel = tank.getGameModel();
-                gameModel.add(new Explode(eX, eY, gameModel));
+                new Explode(eX, eY);
                 return false;
             }
         } else if(o1 instanceof Tank && o2 instanceof Bullet) {
