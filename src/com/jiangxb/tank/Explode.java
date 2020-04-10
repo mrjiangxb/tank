@@ -2,7 +2,7 @@ package com.jiangxb.tank;
 
 import java.awt.*;
 
-public class Explode {
+public class Explode extends GameObject {
 
     public static final int WIDTH = ResourceMgr.explodes[0].getWidth();
     public static final int HEIGNT = ResourceMgr.explodes[0].getHeight();
@@ -42,7 +42,7 @@ public class Explode {
     public void paint(Graphics g){
         g.drawImage(ResourceMgr.explodes[step++], x, y, null);
         if (step >= ResourceMgr.explodes.length) {
-            gameModel.explodes.remove(this);
+            gameModel.remove(this);
         }
     }
 

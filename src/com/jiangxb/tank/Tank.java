@@ -3,7 +3,7 @@ package com.jiangxb.tank;
 import java.awt.*;
 import java.util.Random;
 
-public class Tank {
+public class Tank extends GameObject {
 
     private static final int SPEED = 5;
 
@@ -22,7 +22,7 @@ public class Tank {
     // 所属阵营
     private Group group = Group.BAD;
 
-    Rectangle rectangle = new Rectangle();
+    private Rectangle rectangle = new Rectangle();
 
     private Random random = new Random();
 
@@ -100,9 +100,17 @@ public class Tank {
         this.group = group;
     }
 
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
+    public GameModel getGameModel() {
+        return gameModel;
+    }
+
     public void paint(Graphics g){
 
-        if (!living) gameModel.tanks.remove(this);
+        if (!living) gameModel.remove(this);
 
         switch (dir) {
             case LEFT:
@@ -123,6 +131,7 @@ public class Tank {
         move();
     }
 
+    // 移动
     private void move() {
 
         if (!moving) return;
@@ -162,6 +171,7 @@ public class Tank {
 
     }
 
+    // 边界检测
     private void boundsCheck() {
         if (this.x < 2) x = 2;
         if (this.y < 28) y = 28;
@@ -169,10 +179,32 @@ public class Tank {
         if (this.y > TankFrame.GAME_HEIGHT - Tank.HEIGHT -2 ) y = TankFrame.GAME_HEIGHT -Tank.HEIGHT -2;
     }
 
+    // 随机方向
     private void randomDir() {
         this.dir = Dir.values()[random.nextInt(4)];
     }
 
+    // 转方向
+    public void turnDir(){
+        switch (dir) {
+            case LEFT:
+                this.dir = Dir.DOWN;
+                break;
+            case UP:
+                this.dir = Dir.LEFT;
+                break;
+            case RIGHT:
+                this.dir = Dir.UP;
+                break;
+            case DOWN:
+                this.dir = Dir.RIGHT;
+                break;
+            default:
+                break;
+        }
+    }
+
+    // 开火
     public void fire() {
         fireStrategy.fire(this);
     }
@@ -180,4 +212,5 @@ public class Tank {
     public void die(){
         this.living = false;
     }
+
 }

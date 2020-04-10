@@ -9,3 +9,6 @@ gameHeight=720
 #fireStrategy
 goodFS=com.jiangxb.tank.FourDirFireStrategy
 badFS=com.jiangxb.tank.DefaultFireStrategy
+
+#colliders
+colliders=com.jiangxb.tank.cor.BulletTankCollider,com.jiangxb.tank.cor.TankTankCollider

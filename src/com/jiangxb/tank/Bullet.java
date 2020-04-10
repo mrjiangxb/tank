@@ -4,7 +4,7 @@ import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader
 
 import java.awt.*;
 
-public class Bullet {
+public class Bullet extends GameObject {
 
     private static final int SPEED = 10;
     public static final int WIDTH = ResourceMgr.bulletD.getWidth();
@@ -17,7 +17,7 @@ public class Bullet {
     private Group group = Group.BAD;
 
     GameModel gameModel;
-    Rectangle rectangle = new Rectangle();
+    private Rectangle rectangle = new Rectangle();
 
     public Bullet(int x, int y, Dir dir, Group group, GameModel gameModel) {
         this.x = x;
@@ -31,7 +31,7 @@ public class Bullet {
         rectangle.width = WIDTH;
         rectangle.height = HEIGHT;
 
-        gameModel.bullets.add(this);
+        gameModel.add(this);
     }
 
     public int getX() {
@@ -74,10 +74,15 @@ public class Bullet {
         this.group = group;
     }
 
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
+
     public void paint(Graphics g){
 
         if (!living){
-            gameModel.bullets.remove(this);
+            gameModel.remove(this);
         }
 
         switch (dir) {
@@ -137,13 +142,13 @@ public class Bullet {
         // Rectangle rectangle1 = new Rectangle(this.x, this.y, WIDTH, HEIGHT);
         // Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), tank.WIDTH, tank.HEIGHT);
 
-        if (rectangle.intersects(tank.rectangle)) {
+        if (rectangle.intersects(tank.getRectangle())) {
             tank.die();
             this.die();
 
             int eX = tank.getX() + Tank.WIDTH/2 - Explode.WIDTH/2;
             int eY = tank.getY() + Tank.HEIGHT/2 - Explode.HEIGNT/2;
-            gameModel.explodes.add(new Explode(eX, eY, gameModel));
+            gameModel.add(new Explode(eX, eY, gameModel));
         }
     }
 }
