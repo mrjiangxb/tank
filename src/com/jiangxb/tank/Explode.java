@@ -5,9 +5,9 @@ import java.awt.*;
 public class Explode extends GameObject {
 
     public static final int WIDTH = ResourceMgr.explodes[0].getWidth();
-    public static final int HEIGNT = ResourceMgr.explodes[0].getHeight();
+    public static final int HEIGHT = ResourceMgr.explodes[0].getHeight();
 
-    private int x, y;
+    // private int x, y;
     // private boolean living = true;
     // private TankFrame tankFrame = null;
 
@@ -35,6 +35,14 @@ public class Explode extends GameObject {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
     }
 
 

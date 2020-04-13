@@ -10,7 +10,7 @@ public class Bullet extends GameObject {
     public static final int WIDTH = ResourceMgr.bulletD.getWidth();
     public static final int HEIGHT = ResourceMgr.bulletD.getHeight();
 
-    private int x, y;
+    // private int x, y;
     private Dir dir;
     private boolean living = true;
     // private TankFrame tankFrame = null;
@@ -29,6 +29,7 @@ public class Bullet extends GameObject {
         rectangle.width = WIDTH;
         rectangle.height = HEIGHT;
 
+        // 加入GameObject才能进行碰撞检测
         GameModel.getInstance().add(this);
     }
 
@@ -74,6 +75,14 @@ public class Bullet extends GameObject {
 
     public Rectangle getRectangle() {
         return rectangle;
+    }
+
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
     }
 
 
@@ -127,6 +136,7 @@ public class Bullet extends GameObject {
         if (x < 0 || y < 0 || x > TankFrame.GAME_WIDTH || y > TankFrame.GAME_HEIGHT) this.living = false;
 
     }
+
 
     public void die(){
         this.living = false;

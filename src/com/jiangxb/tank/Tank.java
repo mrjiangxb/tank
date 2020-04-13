@@ -10,8 +10,8 @@ public class Tank extends GameObject {
     public static final int WIDTH = ResourceMgr.goodTankU.getWidth();
     public static final int HEIGHT = ResourceMgr.goodTankU.getHeight();
 
-    // 坐标
-    private int x, y;
+    // 坐标 父类继承
+    // private int x, y;
     // 记录move()前的位置
     int oldX, oldY;
     // 方向
@@ -104,6 +104,14 @@ public class Tank extends GameObject {
 
     public Rectangle getRectangle() {
         return rectangle;
+    }
+
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
     }
 
     public void paint(Graphics g){
