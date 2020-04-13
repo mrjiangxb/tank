@@ -1,6 +1,12 @@
 package com.jiangxb.tank;
 
+import com.jiangxb.tank.observer.TankFireEvent;
+import com.jiangxb.tank.observer.TankFireHandler;
+import com.jiangxb.tank.observer.TankFireObserver;
+
 import java.awt.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class Tank extends GameObject {
@@ -208,4 +214,11 @@ public class Tank extends GameObject {
         this.living = false;
     }
 
+    private List<TankFireObserver> fireObservers =  Arrays.asList(new TankFireHandler());
+    public void handleFireKey() {
+        TankFireEvent event = new TankFireEvent(this);
+        for (TankFireObserver o : fireObservers) {
+            o.actionOnFire(event);
+        }
+    }
 }
