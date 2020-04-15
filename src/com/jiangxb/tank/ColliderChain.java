@@ -6,7 +6,7 @@ import com.jiangxb.tank.collider.Collider;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ColliderChain implements Collider {
+public class ColliderChain implements Collider  {
 
     private List<Collider> colliders = new LinkedList<>();
 

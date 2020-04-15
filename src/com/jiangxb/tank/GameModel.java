@@ -1,6 +1,7 @@
 package com.jiangxb.tank;
 
 import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  * 游戏模型
  * 单例
  */
-public class GameModel {
+public class GameModel implements Serializable {
 
     private static final GameModel INSTANCE = new GameModel();
 
@@ -78,5 +79,49 @@ public class GameModel {
 
     public Tank getMainTank() {
         return myTank;
+    }
+
+    // 存盘
+    public void save(){
+        ObjectOutputStream oos = null;
+        try {
+            File file = new File("d:/tank.data");
+            oos = new ObjectOutputStream(new FileOutputStream(file));
+            oos.writeObject(myTank);
+            oos.writeObject(objects);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    // 回档
+    public void load() {
+        ObjectInputStream ois = null;
+        try {
+            File file = new File("d:/tank.data");
+            ois = new ObjectInputStream(new FileInputStream(file));
+            myTank = (Tank) ois.readObject();
+            objects = (List<GameObject>) ois.readObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
