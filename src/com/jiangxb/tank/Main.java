@@ -1,24 +1,30 @@
 package com.jiangxb.tank;
 
+import com.jiangxb.tank.net.Client;
+
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-        TankFrame tankFrame = new TankFrame();
+        TankFrame tankFrame = TankFrame.getInstance();
 
-        int initTankCount = Integer.parseInt((String) PropertyMgr.get("initTankCount")) ;
+        // tankFrame.setVisible(true);
 
-        // 初始化敌方坦克
-        for (int i = 0; i < initTankCount; i++) {
-            tankFrame.tanks.add(new Tank(50+i*80, 200, Dir.DOWN, Group.BAD, tankFrame));
-        }
         // 播放bgm
-        new Thread( () -> new Audio("audio/war1.wav").loop() ).start();
+        // new Thread( () -> new Audio("audio/war1.wav").loop() ).start();
 
-        while (true){
-            Thread.sleep(25);
-            tankFrame.repaint();
-        }
+        new Thread(() -> {
+            while (true){
+                try {
+                    Thread.sleep(25);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                tankFrame.repaint();
+            }
+        }).start();
+
+        Client.INSTANCE.connect();
 
     }
 

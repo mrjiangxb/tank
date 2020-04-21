@@ -1,11 +1,17 @@
 package com.jiangxb.tank;
 
+import com.jiangxb.tank.net.BulletNewMsg;
+import com.jiangxb.tank.net.Client;
+import com.jiangxb.tank.net.TankJoinMsg;
+
+import javax.swing.event.CaretListener;
 import java.awt.*;
 import java.util.Random;
+import java.util.UUID;
 
 public class Tank {
 
-    private static final int SPEED = 5;
+    private static final int SPEED = 3;
 
     public static final int WIDTH = ResourceMgr.goodTankU.getWidth();
     public static final int HEIGHT = ResourceMgr.goodTankU.getHeight();
@@ -15,7 +21,7 @@ public class Tank {
     // 方向
     private Dir dir = Dir.DOWN;
     // 是否移动
-    private boolean moving = true;
+    private boolean moving = false;
     private TankFrame tankFrame = null;
     // 是否存活
     private boolean living = true;
@@ -23,6 +29,8 @@ public class Tank {
     private Group group = Group.BAD;
 
     Rectangle rectangle = new Rectangle();
+
+    UUID id = UUID.randomUUID();
 
     private Random random = new Random();
 
@@ -32,6 +40,20 @@ public class Tank {
         this.dir = dir;
         this.group = group;
         this.tankFrame = tankFrame;
+
+        rectangle.x = this.x;
+        rectangle.y = this.y;
+        rectangle.width = WIDTH;
+        rectangle.height = HEIGHT;
+    }
+
+    public Tank(TankJoinMsg msg) {
+        this.x = msg.x;
+        this.y = msg.y;
+        this.group = msg.group;
+        this.moving = msg.moving;
+        this.dir = msg.dir;
+        this.id = msg.id;
 
         rectangle.x = this.x;
         rectangle.y = this.y;
@@ -79,9 +101,26 @@ public class Tank {
         this.group = group;
     }
 
+    public UUID getId() {
+        return this.id;
+    }
+
     public void paint(Graphics g){
 
-        if (!living) tankFrame.tanks.remove(this);
+        // 在坦克头上显示uuid
+        Color color = g.getColor();
+        g.setColor(Color.YELLOW);
+        g.drawString(id.toString(), this.x, this.y - 10);
+        g.setColor(color);
+
+        if (!living) { // 坦克已死 在死亡地标记
+            moving = false;
+            Color cc = g.getColor();
+            g.setColor(Color.WHITE);
+            g.drawRect(x, y, WIDTH, HEIGHT);
+            g.setColor(cc);
+            return;
+        }
 
         switch (dir) {
             case LEFT:
@@ -123,12 +162,12 @@ public class Tank {
                 break;
         }
 
-        if (this.group == Group.BAD && random.nextInt(100) > 95) {
+        /*if (this.group == Group.BAD && random.nextInt(100) > 95) {
             this.fire();
         }
         if (this.group == Group.BAD && random.nextInt(100) > 95) {
             randomDir();
-        }
+        }*/
 
         boundsCheck();
 
@@ -152,10 +191,21 @@ public class Tank {
     public void fire() {
         int bX = this.x + Tank.WIDTH/2 - Bullet.WIDTH/2;
         int bY = this.y + Tank.HEIGHT/2 - Bullet.HEIGHT/2;
-        tankFrame.bullets.add(new Bullet(bX, bY, this.dir, this.group, this.tankFrame));
+        Bullet bullet = new Bullet(this.id, bX, bY, this.dir, this.group);
+        TankFrame.getInstance().bullets.add(bullet);
+        Client.INSTANCE.send(new BulletNewMsg(bullet));
+
+        if(this.group == Group.GOOD) {
+            new Thread( () -> new Audio("audio/tank_fire.wav").play() ).start();
+        }
+
     }
 
     public void die(){
         this.living = false;
+    }
+
+    public boolean isLiving() {
+        return living;
     }
 }

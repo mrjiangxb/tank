@@ -1,8 +1,10 @@
 package com.jiangxb.tank;
 
-import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
+import com.jiangxb.tank.net.Client;
+import com.jiangxb.tank.net.TankDieMsg;
 
 import java.awt.*;
+import java.util.UUID;
 
 public class Bullet {
 
@@ -10,20 +12,22 @@ public class Bullet {
     public static final int WIDTH = ResourceMgr.bulletD.getWidth();
     public static final int HEIGHT = ResourceMgr.bulletD.getHeight();
 
+    private UUID id = UUID.randomUUID();
+    private UUID playerId;
+
     private int x, y;
     private Dir dir;
     private boolean living = true;
-    private TankFrame tankFrame = null;
     private Group group = Group.BAD;
 
     Rectangle rectangle = new Rectangle();
 
-    public Bullet(int x, int y, Dir dir, Group group, TankFrame tankFrame) {
+    public Bullet(UUID playerId, int x, int y, Dir dir, Group group) {
+        this.playerId = playerId;
         this.x = x;
         this.y = y;
         this.dir = dir;
         this.group = group;
-        this.tankFrame = tankFrame;
 
         rectangle.x = this.x;
         rectangle.y = this.y;
@@ -71,10 +75,18 @@ public class Bullet {
         this.group = group;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public UUID getPlayerId() {
+        return playerId;
+    }
+
     public void paint(Graphics g){
 
         if (!living){
-            tankFrame.bullets.remove(this);
+            TankFrame.getInstance().bullets.remove(this);
         }
 
         switch (dir) {
@@ -128,19 +140,23 @@ public class Bullet {
 
     public void collideWith(Tank tank) {
 
-        if (this.group == tank.getGroup()) return;
-
-        // TODO: 用一个rectangle来记录子弹的位置
-        // Rectangle rectangle1 = new Rectangle(this.x, this.y, WIDTH, HEIGHT);
-        // Rectangle rectangle2 = new Rectangle(tank.getX(), tank.getY(), tank.WIDTH, tank.HEIGHT);
-
-        if (rectangle.intersects(tank.rectangle)) {
+        System.out.println("bullet-->" + this.playerId);
+        System.out.println("tank id-->" + tank.getId());
+        if (this.playerId.equals(tank.getId())){
+            return;
+        }
+        System.out.println("||||||||||||||||||||||||||||||||||||");
+        if (this.living && tank.isLiving() && this.rectangle.intersects(tank.rectangle)) {
             tank.die();
             this.die();
-
-            int eX = tank.getX() + Tank.WIDTH/2 - Explode.WIDTH/2;
-            int eY = tank.getY() + Tank.HEIGHT/2 - Explode.HEIGNT/2;
-            tankFrame.explodes.add(new Explode(eX, eY, tankFrame));
+            System.out.println("send die message !!!!!!");
+            Client.INSTANCE.send(new TankDieMsg(this.id, tank.getId()));
+            // TankFrame.getInstance().addExplode(tank.getX(), tank.getY());
         }
+
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 }
